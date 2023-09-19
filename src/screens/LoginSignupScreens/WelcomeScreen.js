@@ -1,10 +1,12 @@
 import React from 'react'
-import { StyleSheet,Text, View,Image, TouchableOpacity } from 'react-native'
+import { StyleSheet,Text, View,Image, TouchableOpacity, StatusBar } from 'react-native'
 import logo from '../../../assets/logo.png'
 import { colors,hr80 } from '../../globals/style'
 const WelcomeScreen = ({navigation}) => {
   return (
+    
     <View style={styles.container}>
+      <StatusBar translucent backgroundColor="transparent"/>
          <Text style={styles.title}>Welcome to Foodie</Text>
          <View style={styles.logoout}>
             <Image source={logo} style={styles.logo} />

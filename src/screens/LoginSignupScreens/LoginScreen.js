@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-import {StyleSheet,Text,TextInput,TouchableOpacity,View} from 'react-native'
+import {StyleSheet,Text,TextInput,TouchableOpacity,View,StatusBar} from 'react-native'
 import { colors,hr80,titles,btn1 } from '../../globals/style'
 import { AntDesign,Octicons,MaterialCommunityIcons,FontAwesome5 } from '@expo/vector-icons';
 const LoginScreen = ({navigation}) => {
@@ -13,6 +13,7 @@ const LoginScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
+        <StatusBar translucent backgroundColor="transparent"/>
         <Text style={styles.head1}>Sign In</Text> 
         <View style={styles.inputout}>
              <AntDesign name="user" size={24} color={emailfocus === true ? colors.text1 : colors.text2} />
@@ -35,7 +36,7 @@ const LoginScreen = ({navigation}) => {
             <Octicons name= {showpassword === false ? 'eye-closed' : 'eye'} size={24} color="black" onPress={() => setShowpassword(!showpassword) } />
            
         </View>
-        <TouchableOpacity style={btn1}>
+        <TouchableOpacity style={btn1} onPress={() => navigation.navigate('home')}>
             <Text style={{color:colors.col1,fontSize:titles.btntext,fontWeight:'bold'}}>Sign In</Text>
         </TouchableOpacity>
         <Text style={styles.forget}>Forgot Password?</Text>
